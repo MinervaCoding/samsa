@@ -12,8 +12,5 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        $path = base_path().'/database/seeds/sql/countries.sql';
-        $sql = file_get_contents($path);
-        DB::unprepared($sql);
     }
 }
