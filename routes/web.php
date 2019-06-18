@@ -12,9 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('pages.home');
+})->name('home');
+
+Route::get('/projects', function () {
+    return view('projects.index');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/lean', function () {
+    return view('lean.index');
 });
+
+// Sollte wie folgt gemacht werden:
+
+// - /Page1 kann immer geändert werden, Route bleibt erhalten
+Route::get('/Page1', function () {
+    return view('pages.pageA');
+})->name('TestPageA');
+
+// - /Page2 kann immer geändert werden, Route bleibt erhalten
+Route::get('/Page2', function () {
+    return view('pages.pageB');
+})->name('TestPageB');
