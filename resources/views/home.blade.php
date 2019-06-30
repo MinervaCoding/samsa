@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('content')
-  
-    Lean Board
+
+    Home
 
 @endsection

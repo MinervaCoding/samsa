@@ -1,11 +1,7 @@
 @extends('index')
 
-<html>
+@section('content')
+  
+    Project List
 
-    <body>
-
-            Project List
-
-    </body>
-    
-</html>
+@endsection

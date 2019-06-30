@@ -2,11 +2,11 @@
 
     <a href="/">Home</a>
     <br/>
-    <a href="/projects">Projects</a>
+    <a href="{{ route('Projects') }}">Projects</a>  
     <br/>
-    <a href="/lean">Lean Board</a>
+    <a href="{{ route('Lean') }}">Lean</a>  
     <br/>
-    <a href="{{ route('TestPageA') }}">pageA</a>    
+    <a href="{{ route('Time') }}">Time</a>    
     <br/>
-    <a href="{{ route('TestPageB') }}">pageB</a>
+    <a href="{{ route('Admin') }}">Admin</a>
 </div>
