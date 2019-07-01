@@ -4,37 +4,34 @@ html,
 body {
   background-color: grey;
   font-family: "Nunito", sans-serif;
-  font-weight: 200;
-  height: 100vh;
-  margin: 0;
 }
 
 .grid {
   display: grid;
-  position: static;
-  grid-template-rows: 0.2fr 0.5fr 5fr 1fr;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
+  width: 100vw;
 }
 
-header {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100%;
+.title {
+  grid-column: 1/1;
+  grid-row: 1/1;
   background-color: #40279b;
   color: white;
-  text-align: left;
-  top: 0;
+  text-align: center;
 }
 
 .navigation {
-  grid-column: 2;
-  grid-row: 2;
+  grid-column: 1/1;
+  grid-row: 2/2;
   list-style-type: none;
   border: 1px solid #555;
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 196px;
   background-color: #f1f1f1;
   /* Change the link color on hover */
 }
@@ -53,65 +50,25 @@ header {
   color: white;
 }
 
-article {
+.content {
+  grid-column: 2/3;
+  grid-row: 1/3;
   background-color: #1c8512;
   color: white;
   text-align: left;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  background-color: grey;
+.content div {
+  margin: 10px;
+}
+
+.footline {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  background-color: #40279b;
   color: white;
   text-align: center;
 }
-
-/* .full-height {
-    height: 100vh;
-} */
-
-/* .flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-} */
-
-/* .position-ref {
-    position: relative;
-} */
-
-/* .top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-} */
-
-/* .content {
-    text-align: center;
-} */
-
-/* .navigation, .nav {
-    text-align: right;
-} */
-
-/* .title {
-    font-size: 84px;
-} */
-
-/* .links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-} */
-
-/* .m-b-md {
-    margin-bottom: 30px;
-} */
 
 /* 
 Zur Info in der /webpack.mix.js stehen die Javascript Dateien auf die Laravel hört.

@@ -18,24 +18,29 @@
 
 
 
-            <header>
+            <header class="title">
 
                 @include('partials.title')
 
             </header>
 
-            <nav>
-                    @include('partials.nav')
-            </nav>
 
-            <article>
 
+            <article class="content">
+                <div>
                     @yield('content')
 
-            </article>
-        
-            <footer>
+                </div>
+                    
 
+            </article>
+
+            <nav class="navigation">
+                    @include('partials.nav')
+            </nav>
+        
+            <footer class="footline">
+                
                     @include('partials.footer')
 
             </footer>
