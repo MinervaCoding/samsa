@@ -2,6 +2,6 @@
 
 @section('content')
   
-    Lean Board
+    Lean Board Content
 
 @endsection

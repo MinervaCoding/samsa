@@ -1,7 +1,11 @@
 @extends('index')
 
 @section('content')
+
+    <h1>ProjectList</h1>
   
-    Project List
+    Status:<progress min="0" max="100" value="35">
+
+    </progress>
 
 @endsection

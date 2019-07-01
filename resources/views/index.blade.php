@@ -12,24 +12,37 @@
 
     </head>
 
-    <header>
+    <body>
+
+        <div class="grid">
 
 
-    </header>
 
-    <nav>
-            @include('partials.nav')
-    </nav>
+            <header>
 
-    <article>
+                @include('partials.title')
 
-            @yield('content')
+            </header>
 
-    </article>
- 
-    <footer>
+            <nav>
+                    @include('partials.nav')
+            </nav>
 
-            @include('partials.footer')
+            <article>
 
-    </footer>
+                    @yield('content')
+
+            </article>
+        
+            <footer>
+
+                    @include('partials.footer')
+
+            </footer>
+
+        </div>
+        
+    </body>
+
+    
 </html>

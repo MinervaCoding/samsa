@@ -1,59 +1,126 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);html,
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+
+html,
 body {
-  background-color: #fff;
-  color: #636b6f;
+  background-color: grey;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
   height: 100vh;
   margin: 0;
 }
 
-.full-height {
-  height: 100vh;
+.grid {
+  display: grid;
+  position: static;
+  grid-template-rows: 0.2fr 0.5fr 5fr 1fr;
+  grid-template-columns: 1fr 5fr;
 }
 
-.flex-center {
-  -webkit-align-items: center;
-          align-items: center;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-          justify-content: center;
-}
-
-.position-ref {
+header {
   position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
-}
-
-.content {
-  text-align: center;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #40279b;
+  color: white;
+  text-align: left;
+  top: 0;
 }
 
 .navigation {
+  grid-column: 2;
+  grid-row: 2;
+  list-style-type: none;
+  border: 1px solid #555;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  /* Change the link color on hover */
+}
+
+.navigation li a {
+  text-align: center;
+  border: 1px solid #555;
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.navigation li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+article {
+  background-color: #1c8512;
+  color: white;
   text-align: left;
 }
 
-.title {
-  font-size: 84px;
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: grey;
+  color: white;
+  text-align: center;
 }
 
-.links > a {
-  color: #636b6f;
-  padding: 0 25px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+/* .full-height {
+    height: 100vh;
+} */
 
-.m-b-md {
-  margin-bottom: 30px;
-}
+/* .flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+} */
+
+/* .position-ref {
+    position: relative;
+} */
+
+/* .top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+} */
+
+/* .content {
+    text-align: center;
+} */
+
+/* .navigation, .nav {
+    text-align: right;
+} */
+
+/* .title {
+    font-size: 84px;
+} */
+
+/* .links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+} */
+
+/* .m-b-md {
+    margin-bottom: 30px;
+} */
+
+/* 
+Zur Info in der /webpack.mix.js stehen die Javascript Dateien auf die Laravel hört.
+Das sind: 
+/ressources/sass/app.scss   für scc 
+und:
+/ressources/js/app.js       für Javascript
+
+in Konsole: npm run dev oder: npm run watch (siehe package.json)
+
+ */
 

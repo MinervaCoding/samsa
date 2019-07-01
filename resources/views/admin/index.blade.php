@@ -2,6 +2,6 @@
 
 @section('content')
   
-    Admin
+    Admin Content
 
 @endsection

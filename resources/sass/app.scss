@@ -5,10 +5,21 @@
 @import 'variables';
 @import 'index';
 
-//Jakob auskommentiert, da in Tutorial nicht benötigt. Wird eentuel wieder verwendet
 
+
+//Jakob auskommentiert, da in Tutorial nicht benötigt. Wird eventuel wieder verwendet
 // Bootstrap
 // @import '~bootstrap/scss/bootstrap';
 
 
 
+/* 
+Zur Info in der /webpack.mix.js stehen die Javascript Dateien auf die Laravel hört.
+Das sind: 
+/ressources/sass/app.scss   für scc 
+und:
+/ressources/js/app.js       für Javascript
+
+in Konsole: npm run dev oder: npm run watch (siehe package.json)
+
+ */

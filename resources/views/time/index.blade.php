@@ -2,6 +2,6 @@
 
 @section('content')
   
-    Time
+    Time Content
 
 @endsection

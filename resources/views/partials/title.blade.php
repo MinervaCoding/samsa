@@ -1,3 +1,4 @@
-<div class="title m-b-md">
-    {{ $slot }}
-</div>
+
+<h1>
+    SAMSA
+</h1>
