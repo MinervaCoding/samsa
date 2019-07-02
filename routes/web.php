@@ -12,25 +12,25 @@
 */
 
 Route::get('/', function () {
-    return view('home.index');
+    return view('content.home.index');
 })->name('home');
 
 Route::get('/Projects', function () {
-    return view('projects.index');
+    return view('content.projects.index');
 })->name('Projects');
 
 Route::get('/Lean', function () {
-    return view('lean.index');
+    return view('content.lean.index');
 })->name('Lean');
 
 // Sollte wie folgt gemacht werden:
 
 // - /Time kann immer geändert werden, Route bleibt erhalten
 Route::get('/Time', function () {
-    return view('time.index');
+    return view('content.time.index');
 })->name('Time');
 
 // - /Admin kann immer geändert werden, Route bleibt erhalten
 Route::get('/Admin', function () {
-    return view('admin.index');
+    return view('content.admin.index');
 })->name('Admin');
