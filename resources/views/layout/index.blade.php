@@ -1,14 +1,16 @@
-<!doctype html>
-<html lang="en">
-    <head>  
+<!DOCTYPE html>
+    <html lang="en">
+     <head>
         @include('partials.head')
-    </head>
-    <body>
-        <div class="grid">
-                @include('partials.title')
-                @include('partials.content')
-                @include('partials.nav')
-                @include('partials.footer')
-        </div>
-    </body>
-</html>
+     </head>
+     <body>
+
+         <!-- <div class="grid-container"> -->
+
+        @include('partials.nav')
+        @include('partials.header')
+        @include('partials.content')
+        @include('partials.footer')
+        @include('partials.footer-scripts')
+     </body>
+    </html>

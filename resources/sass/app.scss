@@ -3,13 +3,18 @@
 
 // Variables
 @import 'variables';
+
+@import 'nav';
+@import 'header';
+@import 'footer';
+@import 'content';
 @import 'index';
 
 
 
 //Jakob auskommentiert, da in Tutorial nicht benötigt. Wird eventuel wieder verwendet
 // Bootstrap
-// @import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';
 
 
 
