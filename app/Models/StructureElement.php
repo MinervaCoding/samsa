@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\ActivityStatus;
 use Illuminate\Database\Eloquent\Model;
 
 class StructureElement extends Model
@@ -22,8 +23,9 @@ class StructureElement extends Model
 
     public function country_of_execution()
     {
-        return $this->belongsTo('App\Models\Country');
+        return $this->belongsTo('App\Models\Country','country_of_execution_id');
     }
+
     public function accounting_information()
     {
         return $this->belongsTo('App\Models\AccountingInformation');
@@ -34,16 +36,12 @@ class StructureElement extends Model
         return $this->hasMany( 'App\Models\Activities');
     }
 
-    public function scopeMaxStatus()
+   /* public function maxStatus()
     {
-        //return $this->activities()->max('activity_status')
-        //return $this->;
+        return $this->hasOne( 'App\Models\Activity', 'id', 'parent_id' )
+                            ->join('ActivityStatus', 'activities.id', '=', 'activity_status.activity_id')
+                            -max;
     }
-
-    public function scopeResponsible()
-    {
-        //return $this->activities()->where(activity->process_element->process_element_type, 1)->responsible();
-        return null;
-    }
+    */
     //
 }

@@ -18,6 +18,7 @@ class CreateSubsidiariesTable extends Migration
             $table->string('description');
             $table->bigInteger('country_id')->unsigned();
             $table->string('market_unit');
+
             $table->foreign('country_id')->references('id')->on('countries');
         });
     }

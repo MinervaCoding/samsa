@@ -4,9 +4,12 @@ Route::get('/', function () {
     return view('content.home.index');
 })->name('home');
 
-Route::get('/Projects', function () {
-    return view('content.projects.index');
-})->name('Projects');
+Route::group(['prefix' => 'Projects'], function () {
+    Route::get('/', 'Projects@index')->name('Projects');
+    Route::match(['get', 'post'], 'create', 'Projects@create');
+    Route::match(['get', 'put'], 'update/{id}', 'Projects@update');
+    Route::delete('delete/{id}', 'Projects@delete');
+});
 
 Route::get('/Lean', function () {
     return view('content.lean.index');

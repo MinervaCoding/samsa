@@ -18,7 +18,7 @@ class Projects extends Controller
 
         $structure_elements = new StructureElement();
 
-        //$structure_elements = DB::table('structure_elements')->whereNull('parent_id')
+        /*//$structure_elements = DB::table('structure_elements')->whereNull('parent_id')
         $structure_elements = $structure_elements->whereNull('parent_id')
             ->where(function ($query) use ($request) {
                 $query->where('project_number', 'like', '%' . $request->session()->get('search') . '%')
@@ -26,11 +26,17 @@ class Projects extends Controller
             })
             ->orderBy($request->session()->get('sort_field'), $request->session()->get('sort'))
             ->paginate(10);
+        */
+
+
+        $structure_elements = $structure_elements->where('project_number', 'like', '%' . $request->session()->get('search') . '%')
+            ->orderBy($request->session()->get('sort_field'), $request->session()->get('sort'))
+            ->paginate(10);
 
         if ($request->ajax())
-            return view('projects.index', compact('structure_elements'));
+            return view('content.projects.index', compact('structure_elements'));
         else
-            return view('projects.ajax', compact('structure_elements'));
+            return view('content.projects.ajax', compact('structure_elements'));
     }
 
     public function create(Request $request)

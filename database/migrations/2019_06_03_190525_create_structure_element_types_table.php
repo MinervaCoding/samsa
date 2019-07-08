@@ -15,8 +15,8 @@ class CreateStructureElementTypesTable extends Migration
     {
         Schema::create('structure_element_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('description');
-            $table->bigInteger('group');
+            $table->string('description');
+            $table->smallInteger('group');
         });
     }
 
