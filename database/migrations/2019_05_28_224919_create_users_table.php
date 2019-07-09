@@ -22,9 +22,9 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->string('department_id');
-            $table->string('windows_login');
-            $table->string('daily_working_hours');
+            $table->bigInteger('department_id');
+            $table->string('windows_login')->nullable();
+            $table->double('daily_working_hours');
             $table->timestamps();
         });
     }

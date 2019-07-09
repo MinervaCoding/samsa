@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'first_name', 'last_name', 'department_id', 'daily_working_hours', 'email', 'password',
     ];
 
     /**
@@ -36,4 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function absencedays(){
+        return $this->hasMany( 'App\Models\Absenceday', 'user_id', 'id' );
+    }
+
+    public function latestabsenceday(){
+        return $this->hasOne( 'App\Models\Absenceday', 'user_id', 'id' )->latest();
+    }
+    public function absencedays30(){
+        return $this->hasMany( 'App\Models\Absenceday', 'user_id', 'id' )->where('');
+    }
 }

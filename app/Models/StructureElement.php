@@ -24,6 +24,7 @@ class StructureElement extends Model
     {
         return $this->belongsTo('App\Models\Country');
     }
+    
     public function accounting_information()
     {
         return $this->belongsTo('App\Models\AccountingInformation');
