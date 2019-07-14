@@ -64,52 +64,6 @@
                             </div>
                         </div>
 
-                        <!-- Department -->
-                        <div class="form-group row">
-                            <label  for="department_id" 
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Department') }}
-                            </label>
-
-                            <div class="col-md-6">
-                                <input  id="department_id" 
-                                        type="text" 
-                                        class="form-control @error('department_id') is-invalid @enderror" 
-                                        name="department_id" 
-                                        value="{{ old('department_id') }}" 
-                                        required autocomplete="department_id" 
-                                        autofocus>
-
-                                @error('department_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <!-- Daily Working Hours -->
-                        <div class="form-group row">
-                            <label  for="daily_working_hours" 
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Daily Working Hours') }}
-                            </label>
-
-                            <div class="col-md-6">
-                                <input  id="daily_working_hours" 
-                                        type="text" 
-                                        class="form-control @error('daily_working_hours') is-invalid @enderror" 
-                                        name="daily_working_hours" 
-                                        value="{{ old('daily_working_hours') }}" 
-                                        required autocomplete="daily_working_hours" 
-                                        autofocus>
-
-                                @error('daily_working_hours')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
                         <!-- E-Mail Adresse -->
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>

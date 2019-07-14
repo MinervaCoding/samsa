@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\StructureElement;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,25 +11,32 @@ class Projects extends Controller
     public function index(Request $request)
     {
         $request->session()->put('search', $request->has('search') ? $request->get('search') : ($request->session()->has('search') ? $request->session()->get('search') : ''));
-        //$request->session()->put('gender', $request->has('gender') ? $request->get('gender') : ($request->session()->has('gender') ? $request->session()->get('gender') : -1));
-        $request->session()->put('field', $request->has('field') ? $request->get('field') : ($request->session()->has('field') ? $request->session()->get('field') : 'created_at'));
+        //$request->session()->put('search_field', $request->has('search_field') ? $request->get('search_field') : ($request->session()->has('search_field') ? $request->session()->get('search_field') : 'id'));
+        $request->session()->put('sort_field', $request->has('sort_field') ? $request->get('sort_field') : ($request->session()->has('sort_field') ? $request->session()->get('sort_field') : 'created_at'));
         $request->session()->put('sort', $request->has('sort') ? $request->get('sort') : ($request->session()->has('sort') ? $request->session()->get('sort') : 'desc'));
+
 
         $structure_elements = new StructureElement();
 
-        /*
-            if ($request->session()->get('gender') != -1)
-            $structure_elements = $structure_elements->where('gender', $request->session()->get('gender'));
+        /*//$structure_elements = DB::table('structure_elements')->whereNull('parent_id')
+        $structure_elements = $structure_elements->whereNull('parent_id')
+            ->where(function ($query) use ($request) {
+                $query->where('project_number', 'like', '%' . $request->session()->get('search') . '%')
+                    ->orWhere('description', 'like', '%' . $request->session()->get('search') . '%');
+            })
+            ->orderBy($request->session()->get('sort_field'), $request->session()->get('sort'))
+            ->paginate(10);
         */
 
+
         $structure_elements = $structure_elements->where('project_number', 'like', '%' . $request->session()->get('search') . '%')
-            ->orderBy($request->session()->get('field'), $request->session()->get('sort'))
+            ->orderBy($request->session()->get('sort_field'), $request->session()->get('sort'))
             ->paginate(10);
 
         if ($request->ajax())
-            return view('projects.index', compact('structure_elements'));
+            return view('content.projects.index', compact('structure_elements'));
         else
-            return view('projects.ajax', compact('structure_elements'));
+            return view('content.projects.ajax', compact('structure_elements'));
     }
 
     public function create(Request $request)

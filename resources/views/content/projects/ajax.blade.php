@@ -1,30 +1,5 @@
-@extends('layouts.index')
-@section('css')
-    <style>
-        .loading {
-            background: lightgrey;
-            padding: 15px;
-            position: fixed;
-            border-radius: 4px;
-            left: 50%;
-            top: 50%;
-            text-align: center;
-            margin: -40px 0 0 -50px;
-            z-index: 2000;
-            display: none;
-        }
+@extends('layouts.default')
 
-        a, a:hover {
-            color: white;
-        }
-
-        .form-group.required label:after {
-            content: " *";
-            color: red;
-            font-weight: bold;
-        }
-    </style>
-@endsection
 @section('content')
     <!-- Modal -->
     <div class="modal fade" id="modalForm" tabindex="-1" role="dialog" data-backdrop="static">
@@ -57,7 +32,7 @@
         </div>
     </div>
     <div id="content">
-        @include('projects.index')
+        @include('content.projects.index')
     </div>
     <div class="loading">
         <i class="fa fa-refresh fa-spin fa-2x fa-fw"></i><br/>
@@ -66,5 +41,5 @@
 @endsection
 @section('js')
     <script src="{{asset('js/ajax-crud-modal-form.js')}}"></script>
-    <script src="https://use.fontawesome.com/2c7a93b259.js"></script>
+    <!-- <script src="https://use.fontawesome.com/2c7a93b259.js"></script> -->
 @endsection

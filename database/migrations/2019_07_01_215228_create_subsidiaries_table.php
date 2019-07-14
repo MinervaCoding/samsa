@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountriesTable extends Migration
+class CreateSubsidiariesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('subsidiaries', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('description');
-            $table->smallInteger('ISO3166_numeric');
-            $table->char('ISO3166_alpha3',3);
+            $table->bigInteger('country_id')->unsigned();
+            $table->string('market_unit');
+            $table->timestamps();
+
+            $table->foreign('country_id')->references('id')->on('countries');
         });
     }
 
@@ -28,6 +31,6 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('subsidiaries');
     }
 }

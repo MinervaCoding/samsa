@@ -22,10 +22,13 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->bigInteger('department_id');
+            $table->bigInteger('department_id')->unsigned()->nullable();
             $table->string('windows_login')->nullable();
-            $table->double('daily_working_hours');
+            $table->double('daily_working_hours')->nullable();
             $table->timestamps();
+
+            $table->foreign('department_id')->references('id')->on('departments');
+
         });
     }
 

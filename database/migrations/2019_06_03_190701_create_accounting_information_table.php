@@ -16,7 +16,6 @@ class CreateAccountingInformationTable extends Migration
         Schema::create('accounting_information', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('description');
-            $table->timestamps();
         });
     }
 

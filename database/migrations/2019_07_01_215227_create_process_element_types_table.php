@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountriesTable extends Migration
+class CreateProcessElementTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateCountriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('process_element_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('description');
-            $table->smallInteger('ISO3166_numeric');
-            $table->char('ISO3166_alpha3',3);
+            $table->smallInteger('group');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('process_element_types');
     }
 }

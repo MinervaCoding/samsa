@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubsidiariesTable extends Migration
+class CreateProcessPhasesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateSubsidiariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('subsidiaries', function (Blueprint $table) {
+        Schema::create('process_phases', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('description');
-            $table->bigInteger('country_id')->unsigned();
-            $table->text('market_unit');
- 
- 
-            $table->foreign('country_id')->references('id')->on('countries');
+            $table->string('description');
         });
     }
 
@@ -31,6 +26,6 @@ class CreateSubsidiariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subsidiaries');
+        Schema::dropIfExists('process_phases');
     }
 }

@@ -24,6 +24,13 @@ class DatabaseSeeder extends Seeder
         $sql = file_get_contents($path);
         DB::unprepared($sql);
 
+        // $this->call(UsersTableSeeder::class);
+        $path = base_path().'/database/seeds/sql/departments.sql';
+        $sql = file_get_contents($path);
+        DB::unprepared($sql);
+
+
+
 
 
 

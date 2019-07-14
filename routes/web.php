@@ -4,28 +4,42 @@ Route::get('/', function () {
     return view('content.home.index');
 })->name('home');
 
- Route::get('/Projects', function () {
-    return view('content.projects.index');
-})->name('Projects');
+Route::group(['prefix' => 'Projects'], function () {
+    Route::get('/', 'Projects@index')->name('Projects');
+    Route::match(['get', 'post'], 'create', 'Projects@create');
+    Route::match(['get', 'put'], 'update/{id}', 'Projects@update');
+    Route::delete('delete/{id}', 'Projects@delete');
+});
+
+Route::group(['prefix' => 'UserProfile'], function () {
+    Route::get('/', 'UserProfileController@index')->name('userprofile');
+});
+
+//Routes for Admin Page
+Route::resource('subsidiary','AdminSubsidiaryController');
+Route::resource('department','AdminDepartmentController');
+
+Route::group(['prefix' => 'Admin'], function () {
+    Route::get('/', 'AdminController@index')->name('admin');
+
+    Route::get('/Subsidiary', 'AdminSubsidiaryController@index')->name('AdminSubsidiary');
+    Route::get('/Department', 'AdminDepartmentController@index')->name('AdminDepartment');
+
+});
 
 Route::get('/Lean', function () {
     return view('content.lean.index');
-})->name('Lean');
-
-// - /Time kann immer geändert werden, Route bleibt erhalten
-Route::get('/Time', function () {
-    return view('content.time.index');
-})->name('Time');
+})->name('lean');
 
 Route::get('/Login', function () {
     return view('auth.login');
-})->name('Login');
+})->name('login');
 
 Route::get('/Register', function () {
     return view('auth.register');
-})->name('Register');
-
+})->name('register');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/Home', 'HomeController@index')->name('home');
+
